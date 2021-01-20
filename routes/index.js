@@ -36,7 +36,7 @@ router.post('/add-city', async function(req, res, next){
         img: "http://openweathermap.org/img/wn/"+dataAPI.weather[0].icon+".png",
         temp_min: dataAPI.main.temp_min,
         temp_max: dataAPI.main.temp_max,
-      })
+      });
 
       await newCity.save();
     }
@@ -73,7 +73,7 @@ router.get('/update-cities', async function(req, res, next){
       img: "http://openweathermap.org/img/wn/"+dataAPI.weather[0].icon+".png",
       temp_min: dataAPI.main.temp_min,
       temp_max: dataAPI.main.temp_max,
-    })
+    });
   }
 
   var cityList = await cityModel.find();
