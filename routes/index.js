@@ -12,13 +12,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/weather', async function(req, res, next){
-  if(req.session.user == null){
-    res.redirect('/')
-  } else {
-    var cityList = await cityModel.find();
+  var cityList = await cityModel.find();
 
-    res.render('weather', {cityList})
-  }
+  res.render('weather', {cityList})
 });
 
 router.post('/add-city', async function(req, res, next){
